@@ -1,7 +1,7 @@
 class Admin::ProductsController < ApplicationController
 
   def index
-    @products = Product.order(id: :desc).all
+    @products = Product.order(id: :desc).all #query
   end
 
   def new
