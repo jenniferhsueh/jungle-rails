@@ -7,7 +7,7 @@
     <h1>Dear customer,</h1>
     <h3>Below are the details of your order</h3>
     <tbody>
-      <% @line_items.each do |item| %>
+      <% @order.line_items.each do |item| %>
         <%= render 'item', item: item %>
       <% end %>
     </tbody>

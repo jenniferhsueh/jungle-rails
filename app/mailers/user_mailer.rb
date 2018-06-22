@@ -1,9 +1,9 @@
 class UserMailer < ApplicationMailer
-    default from: 'no-reply@jungle.com'
-   
-    def order_receipt
-      @user = params[:user]
-      @url  = 'http://example.com/login'
-      mail(to: @user.email, subject: #{@order.id})
-    end
-  end
+	default from: 'no-reply@jungle.com'
+	
+	def order_receipt(order, user)
+		@order = order
+		@user = user
+		mail(to: @user.email, subject: @order.id)
+	end
+end
