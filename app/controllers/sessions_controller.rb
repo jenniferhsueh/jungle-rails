@@ -8,7 +8,6 @@ class SessionsController < ApplicationController
 
     puts params
     if user && user.authenticate(params[:user_form][:password])
-      puts 'LOGGED IN'
       session[:user_id] = user.id
       redirect_to '/'
     else
