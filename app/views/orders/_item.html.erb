@@ -2,7 +2,7 @@
 
 <% if product = Product.find_by(id: product_id) %>
   <% item_total = product.price * quantity %>
-  <% @cart_total += item_total %>
+  <% @order_total += item_total %>
 
   <tr>
     <td>
@@ -14,16 +14,7 @@
       <p><%= product.description %></p>
     </td>
     <td>
-      $<%= product.price %>
-    </td>
-    <td>
-      <%= link_to remove_item_cart_path(product_id: product_id), class: 'btn btn-xs btn-danger', method: :delete do %>
-        -
-      <% end %>
-      <%= quantity %>
-      <%= link_to add_item_cart_path(product_id: product_id), class: 'btn btn-xs btn-success', method: :put do %>
-        +
-      <% end %>
+      <%= product.price %>
     </td>
     <td>
       $<%= item_total %>
