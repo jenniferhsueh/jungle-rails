@@ -160,19 +160,19 @@ review1 = Review.create(
   product_id: 11,
   user_id: 1,
   description: "Great quality!",
-  rating: 1
+  rating: 4
 )
 
 review2 = Review.create(
   product_id: 10,
   user_id: 2,
   description: "Love it!",
-  rating: 2
+  rating: 5
 )
 
 review3 = Review.create(
   product_id: 10,
   user_id: 1,
-  description: "Would buy again!",
-  rating: 5
+  description: "Would buy again",
+  rating: 3
 )
