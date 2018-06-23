@@ -23,6 +23,29 @@
           <dt>Price</dt>
           <dd>$<%= @product.price %></dd>
           <br>
+          <dt>Add a Review</dt>
+          <br>
+          <br>
+          <div class="row">
+    <div class="col-sm-6 col-sm-offset-1">
+      <%= form_for :product_review do |f| %>
+
+        <div class="form-group">
+          <%= f.label :description %>
+          <%= f.text_area :description, class: 'form-control' %>
+        </div>
+
+        <div class="form-group">
+          <%= f.label :rating %>
+          <%= f.text_field :rating, class: 'form-control' %>
+        </div>
+
+        <%= f.submit 'Add Review', class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+  <br>
+<br>
           <dt>Reviews</dt>
           <dd>
             <% @product.reviews.each do |review| %>
