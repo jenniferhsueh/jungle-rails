@@ -26,11 +26,11 @@
           <dt>Reviews</dt>
           <dd>
             <% @product.reviews.each do |review| %>
-              Name: <%= User.find_by(id: review.user_id).first_name %> 
+              Name: <%= User.find_by(id: review.user_id).first_name %> <%= User.find_by(id: review.user_id).last_name %>
               <br>
-              Name: <%= reviewUsername(review.user_id)%>
+              User: <%= review_user_first_name(review.user_id)%> <%= review_user_last_name(review.user_id)%>
               <br>
-              Description: <%= review.description %> 
+              Review: <%= review.description %> 
               <br>
               Rating: <%= review.rating %>/5
               <br>

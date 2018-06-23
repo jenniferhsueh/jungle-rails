@@ -137,19 +137,19 @@ cat3.products.create!({
 puts "Creating Users ..."
 
 a = User.create(
-  first_name:  'a',
-  last_name: 'b',
-  email: 'a@a',
-  password: 'a',
-  password_confirmation: 'a'
+  first_name:  'Dimitrios',
+  last_name: 'Petropoulos',
+  email: 'd@d',
+  password: 'd',
+  password_confirmation: 'd'
 )
 
 b = User.create(
-  first_name:  'q',
-  last_name: 'w',
-  email: 'q@q',
-  password: 'q',
-  password_confirmation: 'q'
+  first_name:  'Jennifer',
+  last_name: 'Hsueh',
+  email: 'j@j',
+  password: 'j',
+  password_confirmation: 'j'
 )
 
 ## REVIEWS
