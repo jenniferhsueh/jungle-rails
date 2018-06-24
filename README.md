@@ -27,9 +27,8 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Screenshots
 
-!["Screenshot of homepage"](https://github.com/jenniferhsueh/jungle/blob/master/docs/homepage.png?raw=true)
+!["Screenshot of homepage"](https://github.com/jenniferhsueh/jungle-rails/blob/master/docs/homepage.png?raw=true)
 
-!["Screenshot of product_reviews"](https://github.com/jenniferhsueh/jungle/blob/master/docs/product_reviews.png?raw=true)
+!["Screenshot of product_reviews"](https://github.com/jenniferhsueh/jungle-rails/blob/master/docs/product_reviews.png?raw=true)
 
-!["Screenshot of order_confirmation"](https://github.com/jenniferhsueh/jungle/blob/master/docs/order_confirmation.png?raw=true)
-
+!["Screenshot of order_confirmation"](https://github.com/jenniferhsueh/jungle-rails/blob/master/docs/order_confirmation.png?raw=true)
