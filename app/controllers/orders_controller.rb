@@ -1,6 +1,4 @@
 class OrdersController < ApplicationController
-
-  before_filter :authorize
   
   def show
     @order = Order.find(params[:id])
@@ -14,8 +12,10 @@ class OrdersController < ApplicationController
     if order.valid?
       empty_cart!
       @user = current_user
-      UserMailer.order_receipt(order, @user).deliver_now
       redirect_to order, notice: 'Your Order has been placed.'
+      if @user != nil
+        UserMailer.order_receipt(order, @user).deliver_now
+      end
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
     end
