@@ -44,8 +44,8 @@
 
           <dt>Reviews</dt>
           <dd>
-            <% @product.reviews.each do |review| %>
-              Reviewed by: <%= User.find_by(id: review.user_id).first_name %> <%= User.find_by(id: review.user_id).last_name %>
+            <% @product.reviews.order(created_at: :desc).each do |review| %>
+              Reviewed by: <%= review_user_first_name(review.user_id)%> <%= review_user_last_name(review.user_id)%>
               <br>
               Review: <%= review.description %> 
               <br>
