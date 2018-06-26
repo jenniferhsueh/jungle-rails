@@ -7,6 +7,20 @@ class User < ActiveRecord::Base
   validates :password, presence: true, length: { minimum: 3 }
   validates :password_confirmation, presence: true
 
+  def self.authenticate_with_credentials(email, password)
 
+    user = User.find_by_email(email)
+
+    if user && user.authenticate(password) 
+      user
+    else
+      nil
+    end
+  end
+  # if user && user.authenticate(params[:user_form][:password])
+  #   session[:user_id] = user.id
+  #   redirect_to '/'
+  # else
+  #   redirect_to '/login'
+  # end
 end
-
