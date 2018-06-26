@@ -1,8 +1,8 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  describe 'Validations' do
 
+  describe 'Validations' do
     it "should save successfully when all required properties exist" do
       @user = User.create(
         first_name: "jenn", 
@@ -92,6 +92,37 @@ RSpec.describe User, type: :model do
         password_confirmation: "je")
       expect(@user).not_to be_valid
     end
+  end
 
+  describe '.authenticate_with_credentials' do
+    it "should authenticate user if email matches password" do
+      @user = User.create(
+        first_name: "jenn", 
+        last_name: "hsueh", 
+        email: "j@j", 
+        password: "jennifer", 
+        password_confirmation: "jennifer")
+      expect(User.authenticate_with_credentials("j@j", @user.password)).to be_truthy
+    end
+ 
+    it "should authenticate despite empty spaces in email" do
+      @user = User.create(
+        first_name: "jenn", 
+        last_name: "hsueh", 
+        email: "j@j", 
+        password: "jennifer", 
+        password_confirmation: "jennifer")
+      expect(User.authenticate_with_credentials("  j@j  ", @user.password)).to be_truthy
+    end
+
+    it "should authenticate despite capitalized email" do
+      @user = User.create(
+        first_name: "jenn", 
+        last_name: "hsueh", 
+        email: "j@j", 
+        password: "jennifer", 
+        password_confirmation: "jennifer")
+      expect(User.authenticate_with_credentials("J@J", @user.password)).to be_truthy
+    end
   end
 end
