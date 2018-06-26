@@ -8,8 +8,8 @@ RSpec.describe User, type: :model do
         first_name: "jenn", 
         last_name: "hsueh", 
         email: "j@j", 
-        password: "j", 
-        password_confirmation: "j")
+        password: "jennifer", 
+        password_confirmation: "jennifer")
       expect(@user).to be_present
     end
 
@@ -18,8 +18,8 @@ RSpec.describe User, type: :model do
         first_name: nil, 
         last_name: "hsueh", 
         email: "j@j", 
-        password: "j", 
-        password_confirmation: "j")
+        password: "jennifer", 
+        password_confirmation: "jennifer")
       expect(@user).not_to be_valid
     end
 
@@ -28,8 +28,8 @@ RSpec.describe User, type: :model do
         first_name: "jenn", 
         last_name: nil, 
         email: "j@j", 
-        password: "j", 
-        password_confirmation: "j")
+        password: "jennifer", 
+        password_confirmation: "jennifer")
         expect(@user).not_to be_valid
     end
 
@@ -38,8 +38,8 @@ RSpec.describe User, type: :model do
         first_name: "jenn", 
         last_name: "hsueh", 
         email: nil,
-        password: "j", 
-        password_confirmation: "j")
+        password: "jennifer", 
+        password_confirmation: "jennifer")
       expect(@user).not_to be_valid
     end
     
@@ -49,8 +49,8 @@ RSpec.describe User, type: :model do
         last_name: "hsueh", 
         email: "j@j", 
         password: nil, 
-        password_confirmation: "j")
-        puts @user.inspect
+        password_confirmation: "jennifer")
+        # puts @user.inspect
       expect(@user).not_to be_valid
       expect(@user.password_digest).to be_nil
     end
@@ -60,7 +60,7 @@ RSpec.describe User, type: :model do
         first_name: "jenn", 
         last_name: "hsueh", 
         email: "j@j", 
-        password: "j", 
+        password: "jennifer", 
         password_confirmation: nil)
       expect(@user).not_to be_valid
     end
@@ -70,17 +70,28 @@ RSpec.describe User, type: :model do
         first_name: "jenn", 
         last_name: "hsueh", 
         email: "j@j", 
-        password: "j",
-        password_confirmation: "j")
+        password: "jennifer",
+        password_confirmation: "jennifer")
       expect(@user).to be_valid
 
       @user1 = User.create(
-        first_name: "d",
-        last_name: "petro",
+        first_name: "dimitrios",
+        last_name: "petropoulos",
         email: "J@J",
-        password: "k",
-        password_confirmation: "k")
+        password: "dimitrios",
+        password_confirmation: "dimitrios")
       expect(@user1).not_to be_valid
     end
+
+    it "insist on password with minimum 3 characters" do
+      @user = User.create(
+        first_name: "jenn", 
+        last_name: "hsueh", 
+        email: "j@j", 
+        password: "je", 
+        password_confirmation: "je")
+      expect(@user).not_to be_valid
+    end
+
   end
 end
