@@ -9,7 +9,6 @@ class SessionsController < ApplicationController
     password = params[:user_form][:password]
 
     user = User.authenticate_with_credentials(email, password)
-
     if user
       session[:user_id] = user.id
       redirect_to '/'

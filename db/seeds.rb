@@ -140,16 +140,16 @@ a = User.create(
   first_name:  'Dimitrios',
   last_name: 'Petropoulos',
   email: 'd@d',
-  password: 'd',
-  password_confirmation: 'd'
+  password: 'jennifer',
+  password_confirmation: 'jennifer'
 )
 
 b = User.create(
   first_name:  'Jennifer',
   last_name: 'Hsueh',
   email: 'j@j',
-  password: 'j',
-  password_confirmation: 'j'
+  password: 'dimitrios',
+  password_confirmation: 'dimitrios'
 )
 
 ## REVIEWS
